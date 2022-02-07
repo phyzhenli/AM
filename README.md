@@ -2,4 +2,5 @@
 
 This repository contains three folders：
  - ApproxFlow: a toolbox  evaluate the DNN accuracy with approximate multiplier.
- - HardWare: All compared 
+ - HardWare: Verilog descriptions of All compared multipliers and generated multipliers.
+ - SoftWare: the code of our optimization method. 
