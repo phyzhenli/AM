@@ -1,1 +1,1 @@
-# Adaptable Approximate Multiplier Design Based on Input Distribution and Polarity
+# Adaptable Approximate Multiplier Design Driven by Input Distribution and Polarity
