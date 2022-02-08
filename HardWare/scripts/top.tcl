@@ -1,4 +1,4 @@
-set TOP sbit16_level1_level6
+set TOP ubit8_designware
 
 set SRC_FILE                scripts/read.tcl
 set CONSTRAINT_FILE         scripts/constraints_comb.tcl
