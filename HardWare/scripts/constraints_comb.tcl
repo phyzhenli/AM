@@ -1,4 +1,4 @@
-#7nm
+# 7nm
 set MAX_LOAD [load_of asap7sc7p5t_INVBUF_RVT_TT_ccs_201020/INVx3_ASAP7_75t_R/A]
 set_load [expr $MAX_LOAD*5] [all_outputs]
 
