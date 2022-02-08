@@ -14,6 +14,7 @@ The C++ and Verilog models of reproduced multipliers and generated multipliers.
 
 #### AC
 AC is an approximate multiplier with two approximate 4-2 compressors.
+
 A. Momeni, J. Han, P. Montuschi and F. Lombardi, "[Design and Analysis of Approximate Compressors for Multiplication](https://ieeexplore.ieee.org/abstract/document/6748013)", in IEEE Transactions on Computers, vol. 64, no. 4, pp. 984-994, April 2015, doi: 10.1109/TC.2014.2308214.
 
 #### CR
