@@ -2,21 +2,14 @@
 
 This project contains:
 - software: the code of the optimization method.
-- multipliers: verilog models of reproduced multipliers and generated multipliers.
+- multipliers: Verilog models of reproduced multipliers and generated multipliers.
 - ApproxFlow: a toolbox to evaluate the DNN accuracy with the approximate multiplier.
 - accelerators: three DNN accelerators with unsigned 8-bit multipliers.
-- scripts: the scripts with [Arizona State Predictive PDK (ASAP) 7nm process library](https://github.com/The-OpenROAD-Project/asap7) for Synopsys Design Compiler tool.
-
-<!---
-# Reference
-[1] Vinay Vashishtha, Manoj Vangala, and Lawrence T. Clark. 2017. ASAP7 predictive design kit development and cell design technology co-optimization. In Proceedings of the 36th International Conference on Computer-Aided Design (ICCAD '17). IEEE Press, 992–998.
--->
+- scripts: the scripts to synthesize multipliers and accelerators with [Arizona State Predictive PDK (ASAP) 7nm process library](https://github.com/The-OpenROAD-Project/asap7) in Synopsys Design Compiler Compiler (DC).
 
 ## software
 
-Our optimization method minimizes the average error of an approximate multiplier according to the probability distributions of operands extracted from the target application with consideration of input polarity. We use AND, OR, XOR, and shift operations to compress partial products in Braun Multiplier (or Baugh-Wooley multiplier) to generate unsigned multipliers (or signed multipliers).
-
-Our algorithm consists of 4 steps:
+The goal of the method is to generate approximate multipliers based on the data distributions extracted from the target application with consideration of the input polarity, which consists of 4 steps:
 
 
 
@@ -28,7 +21,7 @@ Our algorithm consists of 4 steps:
 
 #### generated multipliers
 
-The multipliers are generated for three different-scale quantized DNNs including LeNet, AlexNet, and VGG16 with unsigned 8-bit multiplications.
+The multipliers are generated for three different-scale quantized DNNs including LeNet, AlexNet, and VGG16.
 
 #### reproduced multipliers
 
@@ -52,7 +45,7 @@ DesignW is an exact multiplier implemented using Verilog star operator, which is
 
 <!--- KMap is a multiplier architecture with tunable error characteristics, that leverages a modified inaccurate 2×2 building block. -->
 
-P. Kulkarni, P. Gupta and M. Ercegovac, "[Trading Accuracy for Power with an Underdesigned Multiplier Architecture](https://ieeexplore.ieee.org/abstract/document/5718826)," 2011 24th Internatioal Conference on VLSI Design, 2011, pp. 346-351, doi: 10.1109/VLSID.2011.51.
+P. Kulkarni, P. Gupta and M. Ercegovac, "[Trading Accuracy for Power with an Underdesigned Multiplier Architecture](https://ieeexplore.ieee.org/abstract/document/5718826)," 2011 24th International Conference on VLSI Design, 2011, pp. 346-351, doi: 10.1109/VLSID.2011.51.
 
 - OU
 
@@ -76,14 +69,14 @@ I. Haddadi, I. Qiqieh, R. Shafik, F. Xia, M. Al-hayanni and A. Yakovlev, "[Run-t
 
 - Wallace
 
-Wallace is an exact multiplier implemented by wallace tree technique.
+Wallace is an exact multiplier implemented by Wallace Tree technique.
 
 <!---
 - EvoApprox8b
 [EvoApprox8b](http://www.fit.vutbr.cz/research/groups/ehw/approxlib/) is a library that contains 500 Pareto optimal 8-bit approximate multipliers evolved by a multi-objective Cartesian Genetic Programming (CGP). The library provides Verilog, Matlab, and C models of all approximate circuits.
 [//]: # (In addition to standard circuit parameters, circuit error is given for seven different error metrics.)
 
-V. Mrazek, R. Hrbacek, Z. Vasicek and L. Sekanina, "[EvoApprox8b:  Library of Approximate Adders and Multipliers for Circuit Design and Benchmarking of Approximation Methods](https://ieeexplore.ieee.org/abstract/document/7926993)," Design, Automation & Test in Europe Conference & Exhibition (DATE), 2017, 2017, pp. 258-261, doi: 10.23919/DATE.2017.7926993.
+V. Mrazek, R. Hrbacek, Z. Vasicek and L. Sekanina, "[EvoApprox8b:  Library of Approximate Adders and Multipliers for Circuit Design and Benchmarking of Approximation Methods](https://ieeexplore.ieee.org/abstract/document/7926993)," Design, Automation & Test in Europe Conference & Exhibition (DATE), 2017, 2017, pp. 258-261, doi: 10.23919/DATE.2017.7926993.
 
 - EvoApproxLib<sup>LITE</sup>
 [EvoApproxLib<sup>LITE</sup>](https://ehw.fit.vutbr.cz/evoapproxlib/) is a lightweight library of approximate circuits with formally guaranteed error parameters based on [EvoApprox8b](http://www.fit.vutbr.cz/research/groups/ehw/approxlib/). Hardware as well as software models are provided for each circuit.
@@ -95,7 +88,7 @@ V. Mrazek, Z. Vasicek, L. Sekanina, H. Jiang and J. Han, "[Scalable Construction
 
 #### generated multipliers
 
-The multipliers are generated for an adaptive least mean square (LMS)-based finite impulse response (FIR) filter with signed 16-bit multiplications.
+The multipliers are generated for an adaptive least mean square (LMS)-based finite impulse response (FIR) filter.
 
 
 ## ApproxFlow
@@ -107,31 +100,16 @@ The code is available at: https://github.com/FDU-ME-ARC/ApproxFlow
 ### accelerators
 
 - SA
+Systolic Array (SA) is a popular accelerator adopted by Google Tensor Processing Unit (TPU). We implement a 16×16 SA. The top module is systolic_array and the multiplier can be changed in 'multiplier.v'. The names of the clock and the reset signals are 'clk' and 'rst_n' respectively.
 
-Top module is systolic_array and the multiplier can be changed in 'multiplier.v'.
-
-The names of clock and reset signals are 'clk' and 'rst_n' respectively.
-
-N. Jouppi, C. Young, N. Patil and D. Patterson, "[Motivation for and Evaluation of the First Tensor Processing Unit](https://ieeexplore.ieee.org/abstract/document/8358031)," in IEEE Micro, vol. 38, no. 3, pp. 10-19, May./Jun. 2018, doi: 10.1109/MM.2018.032271057.
+<!--- N. Jouppi, C. Young, N. Patil and D. Patterson, "[Motivation for and Evaluation of the First Tensor Processing Unit](https://ieeexplore.ieee.org/abstract/document/8358031)," in IEEE Micro, vol. 38, no. 3, pp. 10-19, May./Jun. 2018, doi: 10.1109/MM.2018.032271057. -->
 
 - SC
+Systolic Cube (SC) is an efficient accelerator of convolution operations in DNNs. The top module is systolic_cube_without_fifo and the multiplier can be changed in 'mad_unit_test.v'. The names of the clock and the reset signals are 'iClk' and 'iRst' respectively.
 
-Top module is systolic_cube_without_fifo and the multiplier can be changed in 'mad_unit_test.v'.
+<!--- Yongchen Wang, Ying Wang, Huawei Li, Cong Shi, and Xiaowei Li. 2019. Systolic Cube: A Spatial 3D CNN Accelerator Architecture for Low Power Video Analysis. In Proceedings of the 56th Annual Design Automation Conference 2019 (DAC '19). Association for Computing Machinery, New York, NY, USA, Article 210, 1–6. DOI:https://doi.org/10.1145/3316781.3317919 -->
 
-The names of clock and reset signals are 'iClk' and 'iRst' respectively.
+- TASU
+TASU is a DNN accelerator for DoReFa-Net. The top module is conv0 and the multiplier can be changed in "mad_unit_test.v". The names of the clock and the reset signals are 'clk' and 'rst_n' respectively.
 
-Yongchen Wang, Ying Wang, Huawei Li, Cong Shi, and Xiaowei Li. 2019. Systolic Cube: A Spatial 3D CNN Accelerator Architecture for Low Power Video Analysis. In Proceedings of the 56th Annual Design Automation Conference 2019 (DAC '19). Association for Computing Machinery, New York, NY, USA, Article 210, 1–6. DOI:https://doi.org/10.1145/3316781.3317919
-
-## TASU [3]
-
-Top module is conv0 and the multiplier can be changed in "mad_unit_test.v".
-
-The names of clock and reset signals are 'clk' and 'rst_n' respectively.
-
-### Reference
-
-[1] 
-
-[2] 
-
-[3] L. Jiao, C. Luo, W. Cao, X. Zhou and L. Wang, "Accelerating low bit-width convolutional neural networks with embedded FPGA," 2017 27th International Conference on Field Programmable Logic and Applications (FPL), 2017, pp. 1-4, doi: 10.23919/FPL.2017.8056820.
+<!--- L. Jiao, C. Luo, W. Cao, X. Zhou and L. Wang, "Accelerating low bit-width convolutional neural networks with embedded FPGA," 2017 27th International Conference on Field Programmable Logic and Applications (FPL), 2017, pp. 1-4, doi: 10.23919/FPL.2017.8056820. -->
