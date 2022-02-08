@@ -26,7 +26,7 @@ DesignW is a exact multiplier implemented using Verilog star operator, which is 
 
 V. Mrazek, R. Hrbacek, Z. Vasicek and L. Sekanina, "[EvoApprox8b:  Library of Approximate Adders and Multipliers for Circuit Design and Benchmarking of Approximation Methods](https://ieeexplore.ieee.org/abstract/document/7926993)", Design, Automation & Test in Europe Conference & Exhibition (DATE), 2017, 2017, pp. 258-261, doi: 10.23919/DATE.2017.7926993.
 
-#### EvoApproxLib^LITE
+#### EvoApproxLib<sup>LITE</sup>
 
 
 
