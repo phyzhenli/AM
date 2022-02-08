@@ -5,7 +5,7 @@ This project contains:
 - multipliers: Verilog models of reproduced multipliers and generated multipliers.
 - ApproxFlow: a toolbox to evaluate the DNN accuracy with the approximate multiplier.
 - accelerators: three DNN accelerators with unsigned 8-bit multipliers.
-- scripts: the scripts to synthesize multipliers and accelerators with [Arizona State Predictive PDK (ASAP) 7nm process library](https://github.com/The-OpenROAD-Project/asap7) in Synopsys Design Compiler Compiler (DC).
+- scripts: the scripts to synthesize multipliers and accelerators with [Arizona State Predictive PDK (ASAP) 7nm process library](https://github.com/The-OpenROAD-Project/asap7) in Synopsys Design Compiler (DC).
 
 ## software
 
