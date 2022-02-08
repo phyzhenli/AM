@@ -1,13 +1,17 @@
 # Adaptable Approximate Multiplier Design Driven by Input Distribution and Polarity
 
-## Software
+This project contains the code of an optimization method to generate approximate multipliers for the target application, generated multipliers, Verilog implementations of three DNN accelerators, and a toolbox named ApproxFlow to evaluate the DNN accuracy with the approximate multiplier.
 
-Our optimization method minimizes the average error of an approximate multiplier according to the probability distributions of operands extracted from the target application with consideration of input polarity, achieving low hardware cost and negligible application-level performance loss.
+## software
+
+Our optimization method minimizes the average error of an approximate multiplier according to the probability distributions of operands extracted from the target application with consideration of input polarity. We use AND, OR, XOR, and shift operations to compress partial products in Braun Multiplier (or Baugh-Wooley multiplier) to generate unsigned multipliers (or signed multipliers).
 
 
-The code of our optimization method based on input distribution and polarity. 
+The code of our optimization method are divided into  xxxxx parts:
 
-## Multipliers
+
+
+## multipliers
 
 The Verilog models of reproduced multipliers and generated multipliers are provided.
 
@@ -15,19 +19,19 @@ The Verilog models of reproduced multipliers and generated multipliers are provi
 
 #### generated multipliers
 
-The multipliers are generated for three different-scale DNNs including LeNet, AlexNet, and VGG16 based on our optimization method.
+The multipliers are generated for three different-scale quantized DNNs including LeNet, AlexNet, and VGG16 with unsigned 8-bit multiplications.
 
 #### reproduced multipliers
 
 - AC
 
-[//]: # (AC is a multiplier with two approximate 4-2 compressors.)
+<!--- AC is a multiplier with two approximate 4-2 compressors. -->
 
 A. Momeni, J. Han, P. Montuschi and F. Lombardi, "[Design and Analysis of Approximate Compressors for Multiplication](https://ieeexplore.ieee.org/abstract/document/6748013)," in IEEE Transactions on Computers, vol. 64, no. 4, pp. 984-994, April 2015, doi: 10.1109/TC.2014.2308214.
 
 - CR
 
-[//]: # (CR leverages a newly-designed approximate adder that limits its carry propagation to the nearest neighbors for fast partial product accumulation. Different levels of accuracy can be achieved through a configurable error recovery by using different numbers of most significant bits (MSBs) for error reduction.)
+<!--- CR leverages a newly-designed approximate adder that limits its carry propagation to the nearest neighbors for fast partial product accumulation. Different levels of accuracy can be achieved through a configurable error recovery by using different numbers of most significant bits (MSBs) for error reduction. -->
 
 C. Liu, J. Han and F. Lombardi, "[A low-power, high-performance approximate multiplier with configurable partial error recovery](https://ieeexplore.ieee.org/abstract/document/6800309)," 2014 Design, Automation & Test in Europe Conference & Exhibition (DATE), 2014, pp. 1-4, doi: 10.7873/DATE.2014.108.
 
@@ -37,25 +41,25 @@ DesignW is an exact multiplier implemented using Verilog star operator, which is
 
 - KMap
 
-[//]: # (KMap is a multiplier architecture with tunable error characteristics, that leverages a modified inaccurate 2×2 building block.)
+<!--- KMap is a multiplier architecture with tunable error characteristics, that leverages a modified inaccurate 2×2 building block. -->
 
 P. Kulkarni, P. Gupta and M. Ercegovac, "[Trading Accuracy for Power with an Underdesigned Multiplier Architecture](https://ieeexplore.ieee.org/abstract/document/5718826)," 2011 24th Internatioal Conference on VLSI Design, 2011, pp. 346-351, doi: 10.1109/VLSID.2011.51.
 
 - OU
 
-[//]: # (OU is an approximate and unbiased floating-point multiplier, which is mathematically proved optimal in terms of square error for the given bases of the space {1, x, y, x<sub>2</sub>, y<sub>2</sub>}. We use the method to generate integer multipliers.)
+<!--- OU is an approximate and unbiased floating-point multiplier, which is mathematically proved optimal in terms of square error for the given bases of the space {1, x, y, x<sub>2</sub>, y<sub>2</sub>}. We use the method to generate integer multipliers. -->
 
 C. Chen, S. Yang, W. Qian, M. Imani, X. Yin and C. Zhuo, "[Optimally Approximated and Unbiased Floating-Point Multiplier with Runtime Configurability](https://dl.acm.org/doi/abs/10.1145/3400302.3415702)," 2020 IEEE/ACM International Conference On Computer Aided Design (ICCAD), 2020, pp. 1-9.
 
 - RoBA
 
-[//]: # (RoBA is a multiplier that rounds the operands to the nearest exponent of two.)
+<!--- RoBA is a multiplier that rounds the operands to the nearest exponent of two. -->
 
 R. Zendegani, M. Kamal, M. Bahadori, A. Afzali-Kusha and M. Pedram, "[RoBA Multiplier: A Rounding-Based Approximate Multiplier for High-Speed yet Energy-Efficient Digital Signal Processing](https://ieeexplore.ieee.org/abstract/document/7517375)," in IEEE Transactions on Very Large Scale Integration (VLSI) Systems, vol. 25, no. 2, pp. 393-401, Feb. 2017, doi: 10.1109/TVLSI.2016.2587696.
 
 - SDLC
 
-[//]: # (SDLC is an energy-efficient approximate multiplier design using a significance-driven logic compression approach. Fundamental to this approach is an algorithmic and configurable lossy compression of the partial product rows based on their progressive bit significance.)
+<!--- SDLC is an energy-efficient approximate multiplier design using a significance-driven logic compression approach. Fundamental to this approach is an algorithmic and configurable lossy compression of the partial product rows based on their progressive bit significance. -->
 
 I. Qiqieh, R. Shafik, G. Tarawneh, D. Sokolov and A. Yakovlev, "[Energy-efficient approximate multiplier design using bit significance-driven logic compression](https://ieeexplore.ieee.org/abstract/document/7926950)," Design, Automation & Test in Europe Conference & Exhibition (DATE), 2017, 2017, pp. 7-12, doi: 10.23919/DATE.2017.7926950.
 
@@ -63,7 +67,7 @@ I. Haddadi, I. Qiqieh, R. Shafik, F. Xia, M. Al-hayanni and A. Yakovlev, "[Run-t
 
 - Wallace
 
-[//]: # (Wallace is an exact multiplier implemented using wallace tree technique.)
+Wallace is an exact multiplier implemented by wallace tree technique.
 
 <!---
 - EvoApprox8b
@@ -82,7 +86,46 @@ V. Mrazek, Z. Vasicek, L. Sekanina, H. Jiang and J. Han, "[Scalable Construction
 
 #### generated multipliers
 
-The multipliers are generated for an least mean square (LMS)-based finite impulse response (FIR) filter.
+The multipliers are generated for an adaptive least mean square (LMS)-based finite impulse response (FIR) filter with signed 16-bit multiplications.
+
+### accelerators
+
+The Verilog implementations of Three DNN accelerators with 8-bit unsigned multiplications are provided.
+
+- SA
+
+Top module is systolic_array and the multiplier can be changed in 'multiplier.v'.
+
+The names of clock and reset signals are 'clk' and 'rst_n' respectively.
+
+N. Jouppi, C. Young, N. Patil and D. Patterson, "[Motivation for and Evaluation of the First Tensor Processing Unit](https://ieeexplore.ieee.org/abstract/document/8358031)," in IEEE Micro, vol. 38, no. 3, pp. 10-19, May./Jun. 2018, doi: 10.1109/MM.2018.032271057.
+
+- SC
+
+Top module is systolic_cube_without_fifo and the multiplier can be changed in 'mad_unit_test.v'.
+
+The names of clock and reset signals are 'iClk' and 'iRst' respectively.
+
+Yongchen Wang, Ying Wang, Huawei Li, Cong Shi, and Xiaowei Li. 2019. Systolic Cube: A Spatial 3D CNN Accelerator Architecture for Low Power Video Analysis. In Proceedings of the 56th Annual Design Automation Conference 2019 (DAC '19). Association for Computing Machinery, New York, NY, USA, Article 210, 1–6. DOI:https://doi.org/10.1145/3316781.3317919
+
+## TASU [3]
+
+Top module is conv0 and the multiplier can be changed in "mad_unit_test.v".
+
+The names of clock and reset signals are 'clk' and 'rst_n' respectively.
+
+### Reference
+
+[1] 
+
+[2] 
+
+[3] L. Jiao, C. Luo, W. Cao, X. Zhou and L. Wang, "Accelerating low bit-width convolutional neural networks with embedded FPGA," 2017 27th International Conference on Field Programmable Logic and Applications (FPL), 2017, pp. 1-4, doi: 10.23919/FPL.2017.8056820.
+
+
+
+
+
 
 ## ApproxFlow
 
