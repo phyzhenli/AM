@@ -1,19 +1,30 @@
 # Adaptable Approximate Multiplier Design Driven by Input Distribution and Polarity
 
-This project contains the code of an optimization method to generate approximate multipliers for the target application, generated multipliers, Verilog implementations of three DNN accelerators, and a toolbox named ApproxFlow to evaluate the DNN accuracy with the approximate multiplier.
+This project contains:
+- software: the code of the optimization method.
+- multipliers: verilog models of reproduced multipliers and generated multipliers.
+- ApproxFlow: a toolbox named ApproxFlow to evaluate the DNN accuracy with the approximate multiplier.
+- accelerators: three DNN accelerators with unsigned 8-bit multipliers.
+- scripts: the scripts with [Arizona State Predictive PDK (ASAP) 7nm process library](https://github.com/The-OpenROAD-Project/asap7) for Synopsys Design Compiler tool.
+
+<!---
+# Reference
+[1] Vinay Vashishtha, Manoj Vangala, and Lawrence T. Clark. 2017. ASAP7 predictive design kit development and cell design technology co-optimization. In Proceedings of the 36th International Conference on Computer-Aided Design (ICCAD '17). IEEE Press, 992–998.
+-->
 
 ## software
 
 Our optimization method minimizes the average error of an approximate multiplier according to the probability distributions of operands extracted from the target application with consideration of input polarity. We use AND, OR, XOR, and shift operations to compress partial products in Braun Multiplier (or Baugh-Wooley multiplier) to generate unsigned multipliers (or signed multipliers).
 
 
-The code of our optimization method are divided into  xxxxx parts:
+Our algorithm consists of 4 steps:
+- 
 
 
 
 ## multipliers
 
-The Verilog models of reproduced multipliers and generated multipliers are provided.
+<!--- The Verilog models of reproduced multipliers and generated multipliers are provided. -->
 
 ### unsigned 8-bit multipliers
 
@@ -88,9 +99,14 @@ V. Mrazek, Z. Vasicek, L. Sekanina, H. Jiang and J. Han, "[Scalable Construction
 
 The multipliers are generated for an adaptive least mean square (LMS)-based finite impulse response (FIR) filter with signed 16-bit multiplications.
 
-### accelerators
 
-The Verilog implementations of Three DNN accelerators with 8-bit unsigned multiplications are provided.
+## ApproxFlow
+
+ApproxFlow is a toolbox to evaluate the DNN accuracy with the approximate multiplier. In ApproxFlow, each approximate multiplier is described by a look-up table. A DNN is represented by a directional acyclic graph (DAG), where each vertex denotes a DNN layer and the edges indicate the data flow. When a vertex in the DAG is executed, its dependencies will be executed automatically.
+
+The code is available at: https://github.com/FDU-ME-ARC/ApproxFlow
+
+### accelerators
 
 - SA
 
@@ -121,14 +137,3 @@ The names of clock and reset signals are 'clk' and 'rst_n' respectively.
 [2] 
 
 [3] L. Jiao, C. Luo, W. Cao, X. Zhou and L. Wang, "Accelerating low bit-width convolutional neural networks with embedded FPGA," 2017 27th International Conference on Field Programmable Logic and Applications (FPL), 2017, pp. 1-4, doi: 10.23919/FPL.2017.8056820.
-
-
-
-
-
-
-## ApproxFlow
-
-ApproxFlow is a toolbox to evaluate the DNN accuracy with the approximate multiplier. In ApproxFlow, each approximate multiplier is described by a look-up table. A DNN is represented by a directional acyclic graph (DAG), where each vertex denotes a DNN layer and the edges indicate the data flow. When a vertex in the DAG is executed, its dependencies will be executed automatically.
-
-The code is available at: https://github.com/FDU-ME-ARC/ApproxFlow
