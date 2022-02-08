@@ -13,12 +13,12 @@ The C++ and Verilog models of reproduced multipliers and generated multipliers.
 ### unsigned 8-bit multipliers
 
 #### AC
-; AC is a multiplier with two approximate 4-2 compressors.
+;AC is a multiplier with two approximate 4-2 compressors.
 
 A. Momeni, J. Han, P. Montuschi and F. Lombardi, "[Design and Analysis of Approximate Compressors for Multiplication](https://ieeexplore.ieee.org/abstract/document/6748013)," in IEEE Transactions on Computers, vol. 64, no. 4, pp. 984-994, April 2015, doi: 10.1109/TC.2014.2308214.
 
 #### CR
-; CR leverages a newly-designed approximate adder that limits its carry propagation to the nearest neighbors for fast partial product accumulation. Different levels of accuracy can be achieved through a configurable error recovery by using different numbers of most significant bits (MSBs) for error reduction.
+;CR leverages a newly-designed approximate adder that limits its carry propagation to the nearest neighbors for fast partial product accumulation. Different levels of accuracy can be achieved through a configurable error recovery by using different numbers of most significant bits (MSBs) for error reduction.
 
 C. Liu, J. Han and F. Lombardi, "[A low-power, high-performance approximate multiplier with configurable partial error recovery](https://ieeexplore.ieee.org/abstract/document/6800309)," 2014 Design, Automation & Test in Europe Conference & Exhibition (DATE), 2014, pp. 1-4, doi: 10.7873/DATE.2014.108.
 
