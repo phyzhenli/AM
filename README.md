@@ -26,7 +26,8 @@ C. Liu, J. Han and F. Lombardi, "[A low-power, high-performance approximate mult
 DesignW is an exact multiplier implemented using Verilog star operator, which is usually built from DesignWare library in Synopsys Design Compiler tool.
 
 #### EvoApprox8b
-[EvoApprox8b](http://www.fit.vutbr.cz/research/groups/ehw/approxlib/) is a library that contains 500 Pareto optimal 8-bit approximate multipliers evolved by a multi-objective Cartesian Genetic Programming (CGP). [//]: # (The library provides Verilog, Matlab, and C models of all approximate circuits. In addition to standard circuit parameters, circuit error is given for seven different error metrics.)
+[EvoApprox8b](http://www.fit.vutbr.cz/research/groups/ehw/approxlib/) is a library that contains 500 Pareto optimal 8-bit approximate multipliers evolved by a multi-objective Cartesian Genetic Programming (CGP). The library provides Verilog, Matlab, and C models of all approximate circuits.
+[//]: # (In addition to standard circuit parameters, circuit error is given for seven different error metrics.)
 
 V. Mrazek, R. Hrbacek, Z. Vasicek and L. Sekanina, "[EvoApprox8b:  Library of Approximate Adders and Multipliers for Circuit Design and Benchmarking of Approximation Methods](https://ieeexplore.ieee.org/abstract/document/7926993)," Design, Automation & Test in Europe Conference & Exhibition (DATE), 2017, 2017, pp. 258-261, doi: 10.23919/DATE.2017.7926993.
 
@@ -36,21 +37,26 @@ V. Mrazek, R. Hrbacek, Z. Vasicek and L. Sekanina, "[EvoApprox8b:  Library of 
 V. Mrazek, Z. Vasicek, L. Sekanina, H. Jiang and J. Han, "[Scalable Construction of Approximate Multipliers With Formally Guaranteed Worst Case Error](https://ieeexplore.ieee.org/abstract/document/8423431)," in IEEE Transactions on Very Large Scale Integration (VLSI) Systems, vol. 26, no. 11, pp. 2572-2576, Nov. 2018, doi: 10.1109/TVLSI.2018.2856362.
 
 #### KMap
-KMap is a multiplier architecture with tunable error characteristics, that leverages a modified inaccurate 2×2 building block.
+[//]: # (KMap is a multiplier architecture with tunable error characteristics, that leverages a modified inaccurate 2×2 building block.)
 
 P. Kulkarni, P. Gupta and M. Ercegovac, "[Trading Accuracy for Power with an Underdesigned Multiplier Architecture](https://ieeexplore.ieee.org/abstract/document/5718826)," 2011 24th Internatioal Conference on VLSI Design, 2011, pp. 346-351, doi: 10.1109/VLSID.2011.51.
 
 #### OU
-OU is an approximate and unbiased floating-point multiplier, which is mathematically proved optimal in terms of square error for the given bases of the space {1, x, y, x<sub>2</sub>, y<sub>2</sub>}. We use the method to generate integer multipliers.
+[//]: # (OU is an approximate and unbiased floating-point multiplier, which is mathematically proved optimal in terms of square error for the given bases of the space {1, x, y, x<sub>2</sub>, y<sub>2</sub>}. We use the method to generate integer multipliers.)
 
 C. Chen, S. Yang, W. Qian, M. Imani, X. Yin and C. Zhuo, "[Optimally Approximated and Unbiased Floating-Point Multiplier with Runtime Configurability](https://dl.acm.org/doi/abs/10.1145/3400302.3415702)," 2020 IEEE/ACM International Conference On Computer Aided Design (ICCAD), 2020, pp. 1-9.
 
 #### RoBA
+[//]: # (RoBA is a multiplier that rounds the operands to the nearest exponent of two.)
 
+R. Zendegani, M. Kamal, M. Bahadori, A. Afzali-Kusha and M. Pedram, "[RoBA Multiplier: A Rounding-Based Approximate Multiplier for High-Speed yet Energy-Efficient Digital Signal Processing](https://ieeexplore.ieee.org/abstract/document/7517375)," in IEEE Transactions on Very Large Scale Integration (VLSI) Systems, vol. 25, no. 2, pp. 393-401, Feb. 2017, doi: 10.1109/TVLSI.2016.2587696.
 
-R. Zendegani, M. Kamal, M. Bahadori, A. Afzali-Kusha and M. Pedram, "[RoBA Multiplier: A Rounding-Based Approximate Multiplier for High-Speed yet Energy-Efficient Digital Signal Processing](https://dl.acm.org/doi/abs/10.1145/3400302.3415702)," in IEEE Transactions on Very Large Scale Integration (VLSI) Systems, vol. 25, no. 2, pp. 393-401, Feb. 2017, doi: 10.1109/TVLSI.2016.2587696.
+#### SDLC
+[//]: # (SDLC is an energy-efficient approximate multiplier design using a significance-driven logic compression approach. Fundamental to this approach is an algorithmic and configurable lossy compression of the partial product rows based on their progressive bit significance.)
 
+I. Qiqieh, R. Shafik, G. Tarawneh, D. Sokolov and A. Yakovlev, "[Energy-efficient approximate multiplier design using bit significance-driven logic compression](https://ieeexplore.ieee.org/abstract/document/7926950)," Design, Automation & Test in Europe Conference & Exhibition (DATE), 2017, 2017, pp. 7-12, doi: 10.23919/DATE.2017.7926950.
 
+I. Haddadi, I. Qiqieh, R. Shafik, F. Xia, M. Al-hayanni and A. Yakovlev, "[Run-time Configurable Approximate Multiplier using Significance-Driven Logic Compression](https://ieeexplore.ieee.org/abstract/document/9643708)," 2021 IEEE 39th International Conference on Computer Design (ICCD), 2021, pp. 117-124, doi: 10.1109/ICCD53106.2021.00029.
 
 
 
