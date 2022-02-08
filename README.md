@@ -1,16 +1,21 @@
 # Adaptable Approximate Multiplier Design Driven by Input Distribution and Polarity
 
-## ApproxFlow
+## Software
 
-ApproxFlow is a toolbox to evaluate the DNN accuracy with the approximate multiplier. In ApproxFlow, each approximate multiplier is described by a look-up table. A DNN is represented by a directional acyclic graph (DAG), where each vertex denotes a DNN layer and the edges indicate the data flow. When a vertex in the DAG is executed, its dependencies will be executed automatically.
+Our optimization method minimizes the average error of an approximate multiplier according to the probability distributions of operands extracted from the target application with consideration of input polarity, achieving low hardware cost and negligible application-level performance loss.
 
-The code is available at: https://github.com/FDU-ME-ARC/ApproxFlow
+
+The code of our optimization method based on input distribution and polarity. 
 
 ## Multipliers
 
 The Verilog models of reproduced multipliers and generated multipliers are provided.
 
 ### unsigned 8-bit multipliers
+
+#### generated multipliers
+
+The multipliers are generated for three different-scale DNNs including LeNet, AlexNet, and VGG16 based on our optimization method.
 
 #### reproduced multipliers
 
@@ -73,9 +78,14 @@ V. Mrazek, R. Hrbacek, Z. Vasicek and L. Sekanina, "[EvoApprox8b:  Library of 
 V. Mrazek, Z. Vasicek, L. Sekanina, H. Jiang and J. Han, "[Scalable Construction of Approximate Multipliers With Formally Guaranteed Worst Case Error](https://ieeexplore.ieee.org/abstract/document/8423431)," in IEEE Transactions on Very Large Scale Integration (VLSI) Systems, vol. 26, no. 11, pp. 2572-2576, Nov. 2018, doi: 10.1109/TVLSI.2018.2856362.
 -->
 
-## Software
+### signed 16-bit multipliers
 
-Our optimization method
+#### generated multipliers
 
+The multipliers are generated for an least mean square (LMS)-based finite impulse response (FIR) filter.
 
-The code of our optimization method based on input distribution and polarity. 
+## ApproxFlow
+
+ApproxFlow is a toolbox to evaluate the DNN accuracy with the approximate multiplier. In ApproxFlow, each approximate multiplier is described by a look-up table. A DNN is represented by a directional acyclic graph (DAG), where each vertex denotes a DNN layer and the edges indicate the data flow. When a vertex in the DAG is executed, its dependencies will be executed automatically.
+
+The code is available at: https://github.com/FDU-ME-ARC/ApproxFlow
