@@ -9,7 +9,7 @@ This project contains:
 
 ## software
 
-The goal of the method is to generate approximate multipliers based on the data distributions extracted from the target application with consideration of the input polarity, which consists of 4 steps:
+The goal of the method is to generate approximate multipliers based on the data distributions extracted from the target application with consideration of the input polarity. The algorithm consists of 4 steps:
 
 
 
@@ -100,16 +100,19 @@ The code is available at: https://github.com/FDU-ME-ARC/ApproxFlow
 ### accelerators
 
 - SA
+
 Systolic Array (SA) is a popular accelerator adopted by Google Tensor Processing Unit (TPU). We implement a 16×16 SA. The top module is systolic_array and the multiplier can be changed in 'multiplier.v'. The names of the clock and the reset signals are 'clk' and 'rst_n' respectively.
 
 <!--- N. Jouppi, C. Young, N. Patil and D. Patterson, "[Motivation for and Evaluation of the First Tensor Processing Unit](https://ieeexplore.ieee.org/abstract/document/8358031)," in IEEE Micro, vol. 38, no. 3, pp. 10-19, May./Jun. 2018, doi: 10.1109/MM.2018.032271057. -->
 
 - SC
+
 Systolic Cube (SC) is an efficient accelerator of convolution operations in DNNs. The top module is systolic_cube_without_fifo and the multiplier can be changed in 'mad_unit_test.v'. The names of the clock and the reset signals are 'iClk' and 'iRst' respectively.
 
 <!--- Yongchen Wang, Ying Wang, Huawei Li, Cong Shi, and Xiaowei Li. 2019. Systolic Cube: A Spatial 3D CNN Accelerator Architecture for Low Power Video Analysis. In Proceedings of the 56th Annual Design Automation Conference 2019 (DAC '19). Association for Computing Machinery, New York, NY, USA, Article 210, 1–6. DOI:https://doi.org/10.1145/3316781.3317919 -->
 
 - TASU
+
 TASU is a DNN accelerator for DoReFa-Net. The top module is conv0 and the multiplier can be changed in "mad_unit_test.v". The names of the clock and the reset signals are 'clk' and 'rst_n' respectively.
 
 <!--- L. Jiao, C. Luo, W. Cao, X. Zhou and L. Wang, "Accelerating low bit-width convolutional neural networks with embedded FPGA," 2017 27th International Conference on Field Programmable Logic and Applications (FPL), 2017, pp. 1-4, doi: 10.23919/FPL.2017.8056820. -->
