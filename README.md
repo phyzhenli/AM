@@ -3,7 +3,7 @@
 This project contains:
 - software: the code of the optimization method.
 - multipliers: verilog models of reproduced multipliers and generated multipliers.
-- ApproxFlow: a toolbox named ApproxFlow to evaluate the DNN accuracy with the approximate multiplier.
+- ApproxFlow: a toolbox to evaluate the DNN accuracy with the approximate multiplier.
 - accelerators: three DNN accelerators with unsigned 8-bit multipliers.
 - scripts: the scripts with [Arizona State Predictive PDK (ASAP) 7nm process library](https://github.com/The-OpenROAD-Project/asap7) for Synopsys Design Compiler tool.
 
@@ -16,9 +16,7 @@ This project contains:
 
 Our optimization method minimizes the average error of an approximate multiplier according to the probability distributions of operands extracted from the target application with consideration of input polarity. We use AND, OR, XOR, and shift operations to compress partial products in Braun Multiplier (or Baugh-Wooley multiplier) to generate unsigned multipliers (or signed multipliers).
 
-
 Our algorithm consists of 4 steps:
-- 
 
 
 
