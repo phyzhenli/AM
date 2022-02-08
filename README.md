@@ -8,11 +8,13 @@ The code is available at: https://github.com/FDU-ME-ARC/ApproxFlow
 
 ## Multipliers
 
-The C++ and Verilog models of reproduced multipliers and generated multipliers.
+The C++ and Verilog models of reproduced multipliers and generated multipliers are provided.
 
 ### unsigned 8-bit multipliers
 
-#### AC
+#### reproduced multipliers
+
+- AC
 [//]: # (AC is a multiplier with two approximate 4-2 compressors.)
 
 A. Momeni, J. Han, P. Montuschi and F. Lombardi, "[Design and Analysis of Approximate Compressors for Multiplication](https://ieeexplore.ieee.org/abstract/document/6748013)," in IEEE Transactions on Computers, vol. 64, no. 4, pp. 984-994, April 2015, doi: 10.1109/TC.2014.2308214.
