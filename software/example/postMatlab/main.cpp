@@ -111,7 +111,7 @@ void generate(const int& bit, const vector<string>& vx, const vector<string>& vm
 
 int main() {
 
-    ifstream infilex("x_test"); // the compression result
+    ifstream infilex("XFYW"); // the compression result
     ifstream infilem("ubit8_level1_level6"); // the file from 'gencode'
 
     string sx;
@@ -136,8 +136,8 @@ int main() {
     regex IDX(R"(f\(1\,(\d+)\))");
     // regex NOT(R"(\~)");
 
-    ofstream outfilef("x_testformul");
-    ofstream outfilev("x_testverilog");
+    ofstream outfilef("XFYW_formul");
+    ofstream outfilev("XFYW_verilog");
 
     int bit = 8;
     // int bit = 16;
