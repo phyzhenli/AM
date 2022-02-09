@@ -13,7 +13,7 @@ The goal of the method is to generate approximate multipliers based on the data 
 
 ### src
 
-The major codes of the algorithm. Please follow the steps to generate multipliers:
+The 'software/src' folder contains the template of the algorithm. Please follow the steps to generate multipliers:
 
 - select the unsigned multiplier or the signed multiplier.
 
@@ -35,7 +35,7 @@ The major codes of the algorithm. Please follow the steps to generate multiplier
 
 ### example
 
-This folder contains an example to generate unsigned 8-bit multipliers for LeNet on MNIST. The example compress the first six rows of the partial products.
+The 'software/example' folder contains an example to generate unsigned 8-bit multipliers for LeNet on MNIST. The example compress the first six rows of the partial products.
 
 ## multipliers
 
