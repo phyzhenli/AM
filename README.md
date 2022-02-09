@@ -38,7 +38,7 @@ We can generate many objective functions by modifying the number of rows of the 
 
 ### example
 
-The 'software/example' folder contains an example to generate unsigned 8-bit multipliers for LeNet on MNIST. The example compresses the first six rows of the partial products.
+The 'software/example' folder contains an example to generate unsigned 8-bit multipliers for LeNet on MNIST. The first six rows of the partial products are compressed. The generated multiplier is in 'software/example/postMatlab'.
 
 
 ## multipliers
