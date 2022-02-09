@@ -147,4 +147,4 @@ TASU is a DNN accelerator for DoReFa-Net. The top module is conv0 and the multip
 
 ### scripts
 
-The files 'constraints_comb.tcl' and 'constraints_seq.tcl' works for multipliers and accelerators respectively.
+The files 'constraints_comb.tcl' and 'constraints_seq.tcl' work for multipliers and accelerators respectively.
