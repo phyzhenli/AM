@@ -40,6 +40,7 @@ We can generate many objective functions by modifying the number of rows of the 
 
 The 'software/example' folder contains an example to generate unsigned 8-bit multipliers for LeNet on MNIST. The example compresses the first six rows of the partial products.
 
+
 ## multipliers
 
 <!--- The Verilog models of reproduced multipliers and generated multipliers are provided. -->
