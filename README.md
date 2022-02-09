@@ -9,9 +9,35 @@ This project contains:
 
 ## software
 
-The goal of the method is to generate approximate multipliers based on the data distributions extracted from the target application with consideration of the input polarity. The algorithm consists of 4 steps:
+The goal of the method is to generate approximate multipliers based on the data distributions extracted from the target application with consideration of the input polarity.
 
+### src
 
+The major codes of the algorithm. Please follow the steps to generate multipliers:
+
+- select the unsigned multiplier or the signed multiplier.
+
+- decide the width of the multiplier and the number of rows of the partial products to be compressed.
+
+- run 'genCode' to generate alternative compressed terms.
+
+- extract the data distributions from the target application.
+
+- combine the alternative compressed terms and the data distributions in 'genFunction.m'.
+
+- run 'genFunction.m' to generate the objective function.
+
+- add a control parameter to the objective function.
+
+- use MATLAB Mixed Integer Genetic Algorithm (GA) to solve the optimization objective and obtain results.
+
+- turn results to C++ and Verilog models of the multiplier by running 'postMATLAB'.
+
+- evaluate the multipliers.
+
+### example
+
+This folder contains an example to generate unsigned 8-bit multipliers for LeNet on MNIST. The example compress the first six rows of the partial products.
 
 ## multipliers
 
