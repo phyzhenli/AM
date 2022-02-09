@@ -31,7 +31,7 @@ The major codes of the algorithm. Please follow the steps to generate multiplier
 
 - use MATLAB Mixed Integer Genetic Algorithm (GA) to solve the optimization objective and obtain compression results.
 
-- turn results to C++ and Verilog models of the multiplier by running 'postMATLAB'.
+- turn results to C++ and Verilog models by running 'postMATLAB'.
 
 ### example
 
