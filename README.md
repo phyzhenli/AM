@@ -144,3 +144,7 @@ Systolic Cube (SC) is an efficient accelerator of convolution operations in DNNs
 TASU is a DNN accelerator for DoReFa-Net. The top module is conv0 and the multiplier can be changed in "mad_unit_test.v". The names of the clock and the reset signals are 'clk' and 'rst_n' respectively.
 
 <!--- L. Jiao, C. Luo, W. Cao, X. Zhou and L. Wang, "Accelerating low bit-width convolutional neural networks with embedded FPGA," 2017 27th International Conference on Field Programmable Logic and Applications (FPL), 2017, pp. 1-4, doi: 10.23919/FPL.2017.8056820. -->
+
+### scripts
+
+The files 'constraints_comb.tcl' and 'constraints_seq.tcl' works for multipliers and accelerators respectively.
