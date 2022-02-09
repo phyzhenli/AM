@@ -19,7 +19,7 @@ The major codes of the algorithm. Please follow the steps to generate multiplier
 
 - decide the width of the multiplier and the number of rows of the partial products to be compressed.
 
-- run 'genCode' to generate alternative compressed terms.
+- run 'gencode' to generate alternative compressed terms.
 
 - extract the data distributions from the target application.
 
