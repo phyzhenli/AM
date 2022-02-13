@@ -16,9 +16,9 @@ The goal of the method is to generate approximate multipliers based on the data 
 
 The 'software/src' folder contains the template of the algorithm. Please follow the steps to generate multipliers:
 
-- select the unsigned multiplier or the signed multiplier.
+- Setp-1: select the unsigned multiplier or the signed multiplier;
 
-- decide the width of the multiplier and the number of rows of the partial products to be compressed.
+- decide the width of the multiplier and the number of rows of the partial products to be compressed;
 
 - run 'gencode' to generate alternative compressed terms.
 
