@@ -1,6 +1,6 @@
 # Adaptable Approximate Multiplier Design Driven by Input Distribution and Polarity
 
-This project contains:
+This repository contains:
 - software: the code of the optimization method.
 - multipliers: Verilog models of reproduced multipliers and generated multipliers.
 - ApproxFlow: a toolbox to evaluate the DNN accuracy with the approximate multiplier.
@@ -16,23 +16,23 @@ The goal of the method is to generate approximate multipliers based on the data 
 
 The 'software/src' folder contains the template of the algorithm. Please follow the steps to generate multipliers:
 
-- Setp-1: select the unsigned multiplier or the signed multiplier;
+- Step-1: select the unsigned multiplier or the signed multiplier.
 
-- decide the width of the multiplier and the number of rows of the partial products to be compressed;
+- Step-2: decide the width of the multiplier and the number of rows of the partial products to be compressed.
 
-- run 'gencode' to generate alternative compressed terms.
+- Step-3: run 'gencode' to generate alternative compressed terms.
 
-- extract the data distributions from the target application.
+- Step-4: extract the data distributions from the target application.
 
-- combine the alternative compressed terms and the data distributions in 'genFunction.m'.
+- Step-5: combine the alternative compressed terms and the data distributions in 'genFunction.m'.
 
-- run 'genFunction.m' to generate the objective function.
+- Step-6: run 'genFunction.m' to generate the objective function.
 
-- add a control parameter to the objective function.
+- Step-7: add a control parameter to the objective function.
 
-- use MATLAB Mixed Integer Genetic Algorithm (GA) to solve the optimization objective and obtain compression results.
+- Step-8: use MATLAB Mixed Integer Genetic Algorithm (GA) to solve the optimization objective and obtain compression results.
 
-- turn results to C++ and Verilog models by running 'postMATLAB'.
+- Step-9: convert results to C++ and Verilog models by running 'postMATLAB'.
 
 We can generate many objective functions by modifying the number of rows of the partial products to be compressed, reversing the input polarity, and adding different control parameters. Then we solve these objective functions in parallel.
 
