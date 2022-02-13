@@ -20,11 +20,11 @@ The 'software/src' folder contains the template of the algorithm. Please follow 
 
 - Step-2: decide the width of the multiplier and the number of rows of the partial products to be compressed.
 
-- Step-3: run 'gencode' to generate alternative compressed terms.
+- Step-3: run 'gencode/unsigned/main.cpp' or 'gencode/signed/main.cpp' to generate alternative compressed terms.
 
 - Step-4: extract the data distributions from the target application.
 
-- Step-5: combine the alternative compressed terms and the data distributions in 'genFunction.m'.
+- Step-5: combine the alternative compressed terms of Step-3 and the data distributions of Step-4 in 'genFunction.m'.
 
 - Step-6: run 'genFunction.m' to generate the objective function.
 
@@ -32,7 +32,7 @@ The 'software/src' folder contains the template of the algorithm. Please follow 
 
 - Step-8: use MATLAB Mixed Integer Genetic Algorithm (GA) to solve the optimization objective and obtain compression results.
 
-- Step-9: convert results to C++ and Verilog models by running 'postMATLAB'.
+- Step-9: convert results to C++ and Verilog models by running 'postMATLAB/main.cpp'.
 
 We can generate many objective functions by modifying the number of rows of the partial products to be compressed, reversing the input polarity, and adding different control parameters. Then we solve these objective functions in parallel.
 
