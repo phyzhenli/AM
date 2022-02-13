@@ -3,7 +3,7 @@ clear
 
 fun = @ ; % add the objective function
 
-nVars = ;
+nVars = ; %
 Lb = zeros(1, nVars);
 Ub = ones(1, nVars);
 
