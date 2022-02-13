@@ -9,7 +9,7 @@ Ub = ones(1, nVars);
 
 IntCon = 1:nVars;
 
-range = 0:30;
+range = 0:132;
 for count = range
     if eval(['exist("fval', num2str(count), '","file")']) == 0
         eval(['fval', num2str(count), '= 1e+20;']);

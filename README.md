@@ -28,7 +28,7 @@ The 'software/src' folder contains the template of the algorithm. Please follow 
 
 - Step-6: run 'genFunction.m' to generate the objective function.
 
-- Step-7: add a control parameter to the objective function.
+- Step-7: add a control parameter to the objective function. It should be noted that you can adjust the parameter to control the number of compressed terms.
 
 - Step-8: run 'matlab -nodesktop -r "run GA; quit;"' to solve the optimization objective and obtain compression results.
 
