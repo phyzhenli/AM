@@ -54,7 +54,7 @@ for idx = 0:int32(2^bitN-1)
         n = n * ((p1(1, idx+1) / total_p1 )^(0.5)) * ( (p2(1, jdx+1)/ total_p2 )^(0.5)); % unsigned mul
         % n = n * ((p1(1, idx + 2^bitN + 1) / total_p1 )^(0.5)) * ((p2(1, idx + 2^bitN + 1) / total_p2 )^(0.5)); % signed mul
 
-        %%%%%%%%%%%%%%% swap p1 with total_p1 and p2 with total_p2 will impact the result %%%%%%%%%%%%
+        %%%%%%%%%%%%%%% swap p1 and p2 %%%%%%%%%%%%
 
         a = n * n.';
         b = b + a;

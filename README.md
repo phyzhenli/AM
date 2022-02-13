@@ -30,7 +30,7 @@ The 'software/src' folder contains the template of the algorithm. Please follow 
 
 - Step-7: add a control parameter to the objective function.
 
-- Step-8: use MATLAB Mixed Integer Genetic Algorithm (GA) to solve the optimization objective and obtain compression results.
+- Step-8: run 'matlab -nodesktop -r "run GA; quit;"' to solve the optimization objective and obtain compression results.
 
 - Step-9: convert results to C++ and Verilog models by running 'postMATLAB/main.cpp'.
 

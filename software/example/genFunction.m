@@ -193,7 +193,7 @@ for idx = 0:int32(2^bitN-1)
         n = n * ((pf(1, idx+1) / total_pf )^(0.5)) * ( (pw(1, jdx+1)/ total_pw )^(0.5)); % unsigned mul
         % n = n * ((pf(1, idx + 2^bitN + 1) / total_pf )^(0.5)) * ((pw(1, idx + 2^bitN + 1) / total_pw )^(0.5)); % signed mul
 
-        %%%%%%%%%%%%%%% swap pf and pw can reverse the input polarity %%%%%%%%%%%%
+        %%%%%%%%%%%%%%% swap pf and pw %%%%%%%%%%%%
 
         a = n * n.';
         b = b + a;
