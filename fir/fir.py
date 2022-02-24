@@ -131,5 +131,5 @@ if __name__ == '__main__':
     sn = xs
     yn, yn_app,W, en,en_app,snr,snr_app ,error,error_app= lmsFunc(xn, dn, M, mu, sn)
 
-    print(int(snr_app[999]*pow(10, 6)))
+    print(int(snr_app[999])
 
