@@ -85,10 +85,6 @@ A. Momeni, J. Han, P. Montuschi and F. Lombardi, "[Design and Analysis of Approx
 
 C. Liu, J. Han and F. Lombardi, "[A low-power, high-performance approximate multiplier with configurable partial error recovery](https://ieeexplore.ieee.org/abstract/document/6800309)," 2014 Design, Automation & Test in Europe Conference & Exhibition (DATE), 2014, pp. 1-4, doi: 10.7873/DATE.2014.108.
 
-- DesignW
-
-DesignW is an exact multiplier implemented using Verilog star operator, which is usually built from DesignWare library in Synopsys Design Compiler tool.
-
 - KMap
 
 <!--- KMap is a multiplier architecture with tunable error characteristics, that leverages a modified inaccurate 2×2 building block. -->
@@ -119,6 +115,10 @@ I. Haddadi, I. Qiqieh, R. Shafik, F. Xia, M. Al-hayanni and A. Yakovlev, "[Run-t
 
 An exact multiplier implemented by Wallace Tree technique.
 
+- DesignW
+
+An exact multiplier implemented using Verilog star operator, which is usually built from DesignWare library in Synopsys Design Compiler tool.
+
 
 ## ApproxFlow
 
@@ -126,7 +126,7 @@ ApproxFlow is a toolbox to evaluate the DNN accuracy with the approximate multip
 
 The code is available at: https://github.com/FDU-ME-ARC/ApproxFlow
 
-### accelerators
+## accelerators
 
 - SA
 
@@ -146,6 +146,6 @@ TASU is a DNN accelerator for DoReFa-Net. The top module is conv0 and the multip
 
 <!--- L. Jiao, C. Luo, W. Cao, X. Zhou and L. Wang, "Accelerating low bit-width convolutional neural networks with embedded FPGA," 2017 27th International Conference on Field Programmable Logic and Applications (FPL), 2017, pp. 1-4, doi: 10.23919/FPL.2017.8056820. -->
 
-### scripts
+## scripts
 
 The files 'constraints_comb.tcl' and 'constraints_seq.tcl' work for synthesis of multipliers and accelerators respectively.
