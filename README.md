@@ -130,7 +130,7 @@ An exact multiplier implemented using Verilog star operator, which is usually bu
 
 ApproxFlow is a toolbox to evaluate the DNN accuracy with the approximate multiplier. In ApproxFlow, each approximate multiplier is described by a look-up table. A DNN is represented by a directional acyclic graph (DAG), where each vertex denotes a DNN layer and the edges indicate the data flow. When a vertex in the DAG is executed, its dependencies will be executed automatically.
 
-The code is available at: https://github.com/FDU-ME-ARC/ApproxFlow
+Available at: https://github.com/FDU-ME-ARC/ApproxFlow.
 
 ## accelerators
 
