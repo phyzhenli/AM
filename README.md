@@ -65,7 +65,7 @@ V. Mrazek, Z. Vasicek, L. Sekanina, H. Jiang and J. Han, "Scalable Construction 
 
 S. Hashemi, R. I. Bahar and S. Reda, "DRUM: A Dynamic Range Unbiased Multiplier for approximate applications," 2015 IEEE/ACM International Conference on Computer-Aided Design (ICCAD), 2015, pp. 418-425, doi: 10.1109/ICCAD.2015.7372600.
 
-Available at: https://github.com/scale-lab/DRUM  and  https://github.com/phyzhenli/DRUM
+Available at: https://github.com/scale-lab/DRUM and https://github.com/phyzhenli/DRUM.
 
 ### generated multipliers
 
