@@ -80,7 +80,7 @@ lambda = lambda + ") + ";
 objectFunStr = "function z = fitnessfun(x)" + newline + "z = " + lambda + objectFunStr + newline + "end";
 
 %%
-fid = fopen("objectFun2.txt", "w");
+fid = fopen("objectFun.m", "w");
 fprintf(fid,'%s', objectFunStr);
 fclose(fid);
 
