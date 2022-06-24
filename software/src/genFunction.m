@@ -60,20 +60,6 @@ for idx = 0:int32(2^bit-1)
     end
 end
 
-
-b_test = b;
-[r, c] = size(b_test);
-for idx = 1:r
-    for jdx = 1:c
-        if idx < jdx
-            b_test(idx, jdx) = b_test(idx, jdx) + b_test(jdx, idx);
-        elseif jdx < idx
-            b_test(idx, jdx) = 0;
-        end
-    end
-end
-
-
 %%
 X = sym('x', [1 (nVars-1)]);
 diagX = diag([1 X]);
@@ -82,16 +68,24 @@ objectMat = diagX * objectMat * diagX;
 objectFun = vpa(sum(sum(objectMat)), 9);
 objectFunStr = string(objectFun);
 
+lambda = "0*(";
 for idx = nVars-1:-1:1
     objectFunStr = strrep(objectFunStr, ['x', num2str(idx)], ['x(', num2str(idx), ')']);
+    lambda = lambda + ['x(', num2str(idx), ')'];
+    if idx ~= 1
+        lambda = lambda + "+";
+    end
 end
+lambda = lambda + ") + ";
+objectFunStr = "function z = fitnessfun(x)" + newline + "z = " + lambda + objectFunStr + newline + "end";
 
 %%
 fid = fopen("objectFun2.txt", "w");
-fprintf(fid,'%s\n', objectFunStr);
+fprintf(fid,'%s', objectFunStr);
 fclose(fid);
 
 tEnd = toc(tStart);
 display(tEnd);
 
 % save('ElapsedTime.txt', 'tEnd', '-ASCII');
+
