@@ -94,4 +94,4 @@ fclose(fid);
 tEnd = toc(tStart);
 display(tEnd);
 
-% save('ElapsedTime8bit.txt', 'tEnd', '-ASCII');
+% save('ElapsedTime.txt', 'tEnd', '-ASCII');
