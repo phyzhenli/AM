@@ -74,26 +74,24 @@ for idx = 1:r
 end
 
 
-b_str = string(b_test);
-for jdx = 2:c
-    eval(['b_str(1, jdx) = strcat(b_str(1, jdx), ', '"*x(', num2str(jdx-1), ')")', ';']);
+%%
+X = sym('x', [1 (nVars-1)]);
+diagX = diag([1 X]);
+objectMat = diagX * objectMat * diagX;
+
+objectFun = vpa(sum(sum(objectMat)), 9);
+objectFunStr = string(objectFun);
+
+for idx = nVars-1:-1:1
+    objectFunStr = strrep(objectFunStr, ['x', num2str(idx)], ['x(', num2str(idx), ')']);
 end
-for idx = 2:r
-    for jdx = 2:c
-        if idx <= jdx
-            eval(['b_str(idx, jdx) = strcat(b_str(idx, jdx), ', '"*x(', num2str(idx-1), ')*x(', num2str(jdx-1), ')")', ';']);
-        end
-    end
-end
 
-
-b_sym = str2sym(b_str);
-objective_function = string(sum(sum(b_sym)));
-
-
-fid=fopen("objective_function.txt", "w");
-fprintf(fid,'%s\n',objective_function);
+%%
+fid = fopen("objectFun2.txt", "w");
+fprintf(fid,'%s\n', objectFunStr);
 fclose(fid);
 
+tEnd = toc(tStart);
+display(tEnd);
 
-disp("ok");
+% save('ElapsedTime8bit.txt', 'tEnd', '-ASCII');
