@@ -2,8 +2,6 @@ clear;
 clc;
 
 bit = ; % width of the multiplier
-bitN = bit; % unsigned mul
-% bitN = bit - 1; % signed mul
 
 % data distributions
 p1 = importdata("");
@@ -16,10 +14,10 @@ n = zeros(nVars, 1);
 a = zeros(nVars, nVars);
 b = zeros(nVars, nVars);
 
-% int32(-2^bitN):int32(2^bitN-1) signed mul
-% 0:int32(2^bitN-1)              unsigned mul
-for idx = 0:int32(2^bitN-1)
-    for jdx = 0:int32(2^bitN-1)
+% int32(-2^(bit-1)):int32(2^(bit-1)-1) signed mul
+% 0:int32(2^bit-1)              unsigned mul
+for idx = 0:int32(2^bit-1)
+    for jdx = 0:int32(2^bit-1)
         f = [];
         for cdx = 1:bit
 
@@ -52,7 +50,7 @@ for idx = 0:int32(2^bitN-1)
         n() = ;
         
         n = n * ((p1(1, idx+1) / total_p1 )^(0.5)) * ( (p2(1, jdx+1)/ total_p2 )^(0.5)); % unsigned mul
-        % n = n * ((p1(1, idx + 2^bitN + 1) / total_p1 )^(0.5)) * ((p2(1, idx + 2^bitN + 1) / total_p2 )^(0.5)); % signed mul
+        % n = n * ((p1(1, idx + 2^(bit-1) + 1) / total_p1 )^(0.5)) * ((p2(1, idx + 2^(bit-1) + 1) / total_p2 )^(0.5)); % signed mul
 
         %%%%%%%%%%%%%%% swap p1 and p2 %%%%%%%%%%%%
 
