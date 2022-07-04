@@ -1,6 +1,7 @@
 clear;
 clc;
 
+tStart = tic;
 bit = ; % width of the multiplier
 
 % data distributions
@@ -9,14 +10,19 @@ p2 = importdata("");
 
 % modify p1 and p2 to be two 1D vectors for matrix calculation
 
+%%
+tFor = tic;
 nVars = ; % the size of the matrix
-n = zeros(nVars, 1);
-a = zeros(nVars, nVars);
-b = zeros(nVars, nVars);
+tmpFun = zeros(nVars, nVars);
+objectMat = zeros(nVars, nVars);
 
+p = parpool(128); % parallel
 % int32(-2^(bit-1)):int32(2^(bit-1)-1) signed mul
 % 0:int32(2^bit-1)              unsigned mul
-for idx = 0:int32(2^bit-1)
+parfor idx = 0:int32(2^bit-1)
+    tic;
+    display(idx);
+    n = zeros(nVars, 1);
     for jdx = 0:int32(2^bit-1)
         f = [];
         for cdx = 1:bit
@@ -54,10 +60,10 @@ for idx = 0:int32(2^bit-1)
 
         %%%%%%%%%%%%%%% swap p1 and p2 %%%%%%%%%%%%
 
-        a = n * n.';
-        b = b + a;
-        
+        tmpFun = n * n.';
+        objectMat = objectMat + tmpFun;
     end
+    toc;
 end
 
 %%
@@ -88,4 +94,6 @@ tEnd = toc(tStart);
 display(tEnd);
 
 % save('ElapsedTime.txt', 'tEnd', '-ASCII');
+
+% quit;
 
