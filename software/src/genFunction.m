@@ -65,6 +65,8 @@ parfor idx = 0:int32(2^bit-1)
     end
     toc;
 end
+delete(p);
+display(toc(tFor));
 
 %%
 X = sym('x', [1 (nVars-1)]);
