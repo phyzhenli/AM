@@ -73,7 +73,7 @@ X = sym('x', [1 (nVars-1)]);
 diagX = diag([1 X]);
 objectMat = diagX * objectMat * diagX;
 
-objectFun = vpa(sum(sum(objectMat)), 9);
+objectFun = vpa(sum(sum(objectMat)));
 objectFunStr = string(objectFun);
 
 lambda = "0*(";
