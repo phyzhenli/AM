@@ -68,34 +68,7 @@ end
 delete(p);
 display(toc(tFor));
 
-%%
-X = sym('x', [1 (nVars-1)]);
-diagX = diag([1 X]);
-objectMat = diagX * objectMat * diagX;
-
-objectFun = vpa(sum(sum(objectMat)));
-objectFunStr = string(objectFun);
-
-lambda = "0*(";
-for idx = nVars-1:-1:1
-    objectFunStr = strrep(objectFunStr, ['x', num2str(idx)], ['x(', num2str(idx), ')']);
-    lambda = lambda + ['x(', num2str(idx), ')'];
-    if idx ~= 1
-        lambda = lambda + "+";
-    end
-end
-lambda = lambda + ") + ";
-objectFunStr = "function z = fitnessfun(x)" + newline + "z = " + lambda + objectFunStr + newline + "end";
-
-%%
-fid = fopen("objectFun.m", "w");
-fprintf(fid,'%s', objectFunStr);
-fclose(fid);
-
-tEnd = toc(tStart);
-display(tEnd);
-
-% save('ElapsedTime.txt', 'tEnd', '-ASCII');
+save('objectMat.mat', 'objectMat');
 
 % quit;
 
