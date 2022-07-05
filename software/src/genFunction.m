@@ -12,9 +12,9 @@ p2 = importdata("");
 
 %%
 tFor = tic;
-nVars = ; % the size of the matrix
-tmpFun = zeros(nVars, nVars);
-objectMat = zeros(nVars, nVars);
+nVars = ; % the number of variables
+tmpFun = zeros(nVars+1, nVars+1);
+objectMat = zeros(nVars+1, nVars+1);
 
 p = parpool(128); % parallel
 % int32(-2^(bit-1)):int32(2^(bit-1)-1) signed mul
@@ -22,7 +22,7 @@ p = parpool(128); % parallel
 parfor idx = 0:int32(2^bit-1)
     tic;
     display(idx);
-    n = zeros(nVars, 1);
+    n = zeros(nVars+1, 1);
     for jdx = 0:int32(2^bit-1)
         f = [];
         for cdx = 1:bit
