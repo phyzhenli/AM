@@ -21,7 +21,7 @@ fun = @(x) objectFun(x) + x*ones(nVars, 1)*lamb;
 
 results = [];
 counter = 0;
-while counter < 100
+while 1
     disp(counter);
     [x, fval] = ga(fun, nVars, [], [], [], [], Lb, Ub, [], IntCon);
     results = [results; [sum(x) fval x]];
