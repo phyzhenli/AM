@@ -70,6 +70,9 @@ Available at: https://github.com/scale-lab/DRUM and https://github.com/phyzhenli
 #### unsigned 8-bit multipliers
 
 The multipliers are generated for three different-scale quantized DNNs including LeNet, AlexNet, and VGG16.
+In addition, this folder also contains multipliers generated for uniform distributions with different $l$ and $\lambda$.
+
+#### unsigned 32-bit multipliers
 
 #### signed 16-bit multipliers
 
