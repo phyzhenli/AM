@@ -25,6 +25,7 @@ while 1
     disp(counter);
     [x, fval] = ga(fun, nVars, [], [], [], [], Lb, Ub, [], IntCon);
     results = [results; [sum(x) fval x]];
+    results = unique(results, 'rows', 'stable');
     results = sortrows(results, 2);
     results = results(1:min(size(results,1), dN), :);
     if mod(counter, step) == 0
