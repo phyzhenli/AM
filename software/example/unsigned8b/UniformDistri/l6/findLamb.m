@@ -17,14 +17,14 @@ IntCon = 1:nVars;
 terms = nVars;
 M = floor( l*bit(2) - bit(1) * bit(2) * areaR );
 
-lambda = 1;
+lamb = 1;
 while terms > M
-    lambda = lambda * 10;
-    disp(lambda);
-    fun = @(x) objectFun(x) + x*ones(nVars, 1)*lambda;
+    lamb = lamb * 10;
+    disp(lamb);
+    fun = @(x) objectFun(x) + x*ones(nVars, 1)*lamb;
     [x, fval] = ga(fun, nVars, [], [], [], [], Lb, Ub, [], IntCon);
     terms = sum(x);
 end
 
-disp("lambda: ");
-disp(lambda / 2);
+disp("lamb: ");
+disp(lamb / 2);

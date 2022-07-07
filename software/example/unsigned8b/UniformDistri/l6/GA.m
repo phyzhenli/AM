@@ -4,7 +4,7 @@ clear;
 load('objectMat_l6.mat');
 bit = [8 8];
 l = 6;
-lambda = 50000;
+lamb = 50000;
 signEn = 0;
 dN = 20;
 step = 20;
@@ -17,7 +17,7 @@ Lb = zeros(1, nVars);
 Ub = ones(1, nVars);
 IntCon = 1:nVars;
 
-fun = @(x) objectFun(x) + x*ones(nVars, 1)*lambda;
+fun = @(x) objectFun(x) + x*ones(nVars, 1)*lamb;
 
 results = [];
 counter = 0;
@@ -29,19 +29,19 @@ while counter < 100
     results = results(1:min(size(results,1), dN), :);
     if mod(counter, step) == 0
         for jdx = 1:min(size(results, 1), dN)
-            genVerilog(bit, l, lambda, jdx, results(jdx, :), dN, signEn);
-            genCpp(bit, l, lambda, jdx, results(jdx, :), dN, signEn);
+            genVerilog(bit, l, lamb, jdx, results(jdx, :), dN, signEn);
+            genCpp(bit, l, lamb, jdx, results(jdx, :), dN, signEn);
         end
     end
     counter = counter + 1;
 end
 
-function [] = genVerilog(bit, l, lambda, file_number, result, dN, signEn)
+function [] = genVerilog(bit, l, lamb, file_number, result, dN, signEn)
     verilog = "";
     verilog = verilog + "// terms: " + string(result(1)) + newline;
     verilog = verilog + "// fval:  " + string(result(2)) + newline + newline;
     if signEn == 0
-        mul_name = "ubit" + string(bit(1)) + "x" + string(bit(2)) + "_l" + string(l) + "_lamb" + string(lambda) + "_" + num2str(file_number-1, '%0' + string(ceil(log10(dN))) + 'd');
+        mul_name = "ubit" + string(bit(1)) + "x" + string(bit(2)) + "_l" + string(l) + "_lamb" + string(lamb) + "_" + num2str(file_number-1, '%0' + string(ceil(log10(dN))) + 'd');
         verilog = verilog + "module " + mul_name + " (" + newline;
         verilog = verilog + char(9) + "input [" + string( bit(1)-1 ) + ":0] x," + newline;
         verilog = verilog + char(9) + "input [" + string( bit(2)-1 ) + ":0] y," + newline;
@@ -124,7 +124,7 @@ function contents = get_contents(bit, result, signEn)
     end
 end
 
-function [] = genCpp(bit, l, lambda, file_number, result, dN, signEn)
+function [] = genCpp(bit, l, lamb, file_number, result, dN, signEn)
     cpp = "";
     cpp = cpp + "// terms: " + string(result(1)) + newline;
     cpp = cpp + "// fval:  " + string(result(2)) + newline + newline;
@@ -132,7 +132,7 @@ function [] = genCpp(bit, l, lambda, file_number, result, dN, signEn)
     cpp = cpp + "#include <cmath>" + newline + newline;
     cpp = cpp + "using namespace std;" + newline + newline;
     if signEn == 0
-        mul_name = "ubit" + string(bit(1)) + "x" + string(bit(2)) + "_l" + string(l) + "_lamb" + string(lambda) + "_" + num2str(file_number-1, '%0' + string(ceil(log10(dN))) + 'd');
+        mul_name = "ubit" + string(bit(1)) + "x" + string(bit(2)) + "_l" + string(l) + "_lamb" + string(lamb) + "_" + num2str(file_number-1, '%0' + string(ceil(log10(dN))) + 'd');
         x_uint_width = 2^( ceil( log2( bit(1) ) ) );
         y_uint_width = 2^( ceil( log2( bit(2) ) ) );
         total_uint_width = 2^( ceil( log2(x_uint_width+y_uint_width) ) );
