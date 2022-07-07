@@ -37,7 +37,7 @@ By modifying the number of rows of the partial products to be compressed, revers
 
 ### example
 
-The 'software/example' folder contains an example to generate unsigned 8-bit multipliers for uniform distribution. The first six rows of the partial products are compressed. Please run 'GA.m' to generate multipliers.
+The 'software/example' folder contains an example to generate unsigned 8-bit multipliers for uniform distributions. The first six rows of the partial products are compressed. Please run 'GA.m' to generate multipliers.
 
 
 ## multipliers
