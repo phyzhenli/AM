@@ -19,27 +19,25 @@ The 'software/src' folder contains the template of the algorithm. Please follow 
 
 - Step-1: select the unsigned multiplier or the signed multiplier.
 
-- Step-2: decide the width of the multiplier and the number of rows of the partial products to be compressed.
+- Step-2: decide the number of rows of the partial products to be compressed.
 
 - Step-3: run 'gencode/unsigned/main.cpp' or 'gencode/signed/main.cpp' to generate alternative compressed terms.
 
 - Step-4: extract the data distributions from the target application.
 
-- Step-5: combine the alternative compressed terms of Step-3 and the data distributions of Step-4 in 'genFunction.m'.
+- Step-5: combine the alternative compressed terms of Step-3 and the data distributions of Step-4 in 'LogicCompress.m'.
 
-- Step-6: run 'genFunction.m' to generate the objective function.
+- Step-6: run 'LogicCompress.m' to generate 'objectMat.mat'.
 
-- Step-7: add a control parameter to the objective function. It should be noted that you can adjust the parameter to control the number of compressed terms.
+- Step-7: find a a control parameter $\lambda$ for a given desired area reduction ratio by 'findLamb.m'. It should be noted that you can adjust the parameter to control the number of compressed terms.
 
-- Step-8: run 'GA.m' to solve the optimization objective and obtain compression results.
+- Step-8: run 'GA.m' to solve the optimization objective and generate multipliers.
 
-- Step-9: convert results to C++ and Verilog models by running 'postMATLAB/main.cpp'.
-
-We can generate many objective functions by modifying the number of rows of the partial products to be compressed, reversing the input polarity, and adding different control parameters. Then we solve these objective functions in parallel.
+By modifying the number of rows of the partial products to be compressed, reversing the input polarity, or adding different control parameters, the mthod can generate multipliers with different qualities .
 
 ### example
 
-The 'software/example' folder contains an example to generate unsigned 8-bit multipliers for LeNet on MNIST. The first six rows of the partial products are compressed. The generated multiplier is in 'software/example/postMatlab'.
+The 'software/example' folder contains an example to generate unsigned 8-bit multipliers for uniform distribution. The first six rows of the partial products are compressed. Please run 'GA.m' to generate multipliers.
 
 
 ## multipliers
