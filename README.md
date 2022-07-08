@@ -13,11 +13,9 @@ This repository contains:
 
 The goal of the method is to generate approximate multipliers based on the data distributions extracted from the target application with consideration of the input polarity.
 
-### src
+The 'software' folder contains the MATLAB code of the method. Please follow the steps to generate multipliers:
 
-The 'software/src' folder contains the template of the algorithm. Please follow the steps to generate multipliers:
-
-- Step-1: select the unsigned multiplier or the signed multiplier.
+- Step-1: select the unsigned multiplier or the signed multiplier sign.
 
 - Step-2: decide the number of rows of the partial products to be compressed.
 
