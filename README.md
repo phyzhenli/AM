@@ -20,9 +20,9 @@ The 'software' folder contains the MATLAB code of the method. Please follow the 
 
 - Step-3: extract the data distributions from the target application.
 
-- Step-4: combine data distributions of Step-4 in 'LogicCompress.m' (default: uniform).
+- Step-4: combine data distributions of Step-3 in 'LogicCompress.m' (default: uniform).
 
-- Step-5: run 'LogicCompress.m' to generate 'objectMat.mat'.
+- Step-5: run 'LogicCompress.m' to generate '.mat'.
 
 - Step-6: find a a control parameter $\lambda$ for a given desired area reduction ratio by 'findLamb.m'. It should be noted that you can adjust the parameter to control the number of compressed terms.
 
