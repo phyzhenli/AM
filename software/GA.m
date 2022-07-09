@@ -200,6 +200,7 @@ function [] = genCpp(g, h, l, lamb, file_number, result, dN, sign)
                 end
             end
             cpp = cpp + ";" + newline + newline;
+            cpp = cpp + type + string(total_width) + "_t z = tmp_z +";
         else
             cpp = cpp + type + string(total_width) + "_t z =";
         end
