@@ -94,8 +94,8 @@ for idx = x_start : x_end
     end
     % toc;
 end
-% delete(p);
 display(toc(tFor));
+% delete(p);
 
 if sign == 0
     file_name = "unsigned_";
