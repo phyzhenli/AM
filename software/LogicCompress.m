@@ -1,7 +1,6 @@
 clear;
 clc;
 
-tStart = tic;
 width = [8 8]; % width of a multiplier
 g = width(1); % a multiplier g rows of partial products
 h = width(2); % each row contains h partial products
@@ -9,7 +8,6 @@ l = 6; % select l rows to be compressed
 sign = 0; % unsign or sign, 0: unsign, 1: sign
 
 %%
-tFor = tic;
 Z = ( 3*h - 2) * l;
 tmpMat = zeros(Z+1, Z+1);
 objectMat = zeros(Z+1, Z+1);
@@ -27,6 +25,7 @@ else
 end
 
 % p = parpool(128);
+tFor = tic;
 for idx = x_start : x_end
 %     tic;
     display(idx);
