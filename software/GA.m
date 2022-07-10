@@ -29,6 +29,8 @@ fun = @(x) objectFun(x) + x*ones(Z, 1)*lamb;
 
 results = [];
 counter = 0;
+% options = optimoptions('ga','UseParallel', true, 'UseVectorized', false);
+% p = parpool(53);
 while 1
     disp(counter);
     [x, fval] = ga(fun, Z, [], [], [], [], Lb, Ub, [], IntCon);
