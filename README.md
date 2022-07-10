@@ -65,7 +65,7 @@ The multipliers are generated for three different-scale quantized DNNs including
 ##### for uniform distributions
 Many multipliers generated from uniform distributions with different l and $\lambda$.
 
-![avatar](PDA_MAE.png =700x450)
+![avatar](PDA_MAE.png "=700x450")
 
 #### unsigned 32-bit multipliers
 
