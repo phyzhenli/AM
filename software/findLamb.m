@@ -27,7 +27,7 @@ terms = Z;
 M = floor( l*h - g*h*areaR );
 
 lamb = 1;
-while terms > M
+while terms > max{M, 0}
     disp(lamb);
     fun = @(x) objectFun(x) + x*ones(Z, 1)*lamb;
     [x, fval] = ga(fun, Z, [], [], [], [], Lb, Ub, [], IntCon);
