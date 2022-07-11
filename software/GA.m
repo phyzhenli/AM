@@ -58,7 +58,7 @@ function [] = genVerilog(g, h, l, lamb, file_number, result, dN, sign)
         mul_name = "signed_";
     end
 
-    mul_name = mul_name + string(g) + "x" + string(h) + "_l" + string(l) + "_lamb" + string(lamb) + "_" + num2str(file_number-1, '%0' + string(ceil(log10(dN))) + 'd');
+    mul_name = mul_name + string(g) + "x" + string(h) + "_l" + string(l) + "_lamb" + string(lamb) + "_" + num2str(file_number, '%0' + string(ceil(log10(dN))) + 'd');
     verilog = verilog + "module " + mul_name + " (" + newline;
     verilog = verilog + char(9) + "input [" + string( g-1 ) + ":0] x," + newline;
     verilog = verilog + char(9) + "input [" + string( h-1 ) + ":0] y," + newline;
