@@ -28,12 +28,12 @@ M = floor( l*h - g*h*areaR );
 
 lamb = 1;
 while terms > M
-    lamb = lamb * 10;
     disp(lamb);
     fun = @(x) objectFun(x) + x*ones(Z, 1)*lamb;
     [x, fval] = ga(fun, Z, [], [], [], [], Lb, Ub, [], IntCon);
     terms = sum(x);
+    lamb = lamb * 10;
 end
 
 disp("lamb: ");
-disp(lamb / 2);
+disp(lamb / 10 / 2);
