@@ -22,9 +22,9 @@ The 'software' folder contains the MATLAB code of the method. Please follow the 
 
 - Step-4: combine data distributions of Step-3 in 'LogicCompress.m' (default: uniform).
 
-- Step-5: run 'LogicCompress.m' to generate '.mat'.
+- Step-5: run 'LogicCompress.m' to generate '.mat' with consideration of input polarity.
 
-- Step-6: find a a control parameter $\lambda$ for a given desired area reduction ratio by 'findLamb.m'. It should be noted that you can adjust the parameter to control the number of compressed terms.
+- Step-6: find a a control parameter $\lambda$ for a given desired percent reduction of area $R$ by 'findLamb.m'.
 
 - Step-7: run 'GA.m' to solve the optimization objective and **directly** generate Verilog and C models of multipliers.
 
