@@ -71,7 +71,7 @@ Many multipliers generated from uniform distributions with different l and $\lam
 
 #### unsigned 32-bit multipliers
 
-TODO
+##### for half-normal distribution with $\mu = 0$ and $\sigma = 2^{30}$
 
 #### signed 16-bit multipliers
 
