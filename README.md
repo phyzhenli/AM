@@ -16,7 +16,7 @@ The 'software' folder contains the MATLAB code of the method. Please follow the 
 
 - Step-1: select the unsigned multiplier or the signed multiplier: sign = 0 or 1.
 
-- Step-2: decide the number of rows of the partial products to be compressed: the value of $l$, which can be roughly set to min { $ g^{\prime}, \text{even} ( 2gR ) $ }, where $R$ is the desired percent reduction of area and even() means rounding up to the nearest even number.
+- Step-2: decide the number of rows of the partial products to be compressed: the value of $l$, which can be roughly set to min{$g^{\prime}$, even($2gR$)}, where $R$ is the desired percent reduction of area and even() means rounding up to the nearest even number.
 
 - Step-3: extract the data distributions from the target application.
 
