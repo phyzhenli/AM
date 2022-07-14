@@ -73,6 +73,8 @@ Many multipliers generated from uniform distributions with different l and $\lam
 
 ##### for half-normal distribution with $\mu = 0$ and $\sigma = 2^{30}$
 
+Multipliers are generated for the half-normal distribution applications.
+
 #### signed 16-bit multipliers
 
 The multipliers are generated for an adaptive least mean square (LMS)-based finite impulse response (FIR) filter.
