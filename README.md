@@ -61,10 +61,10 @@ Available at: https://github.com/scale-lab/DRUM and https://github.com/phyzhenli
 #### unsigned 8-bit multipliers
 
 ##### for DNNs
-The multipliers are generated for three different-scale quantized DNNs including LeNet, AlexNet, and VGG16.
+Multipliers for three different-scale quantized DNNs including LeNet, AlexNet, and VGG16.
 
 ##### for uniform distributions
-Many multipliers generated from uniform distributions with different l and $\lambda$.
+Multipliers with different settings of l and $\lambda$ for the uniform distribution applications.
 
 <!-- ![](figs/PDA_MAE.png) -->
 <img src="multipliers/unsigned8b/Ours/UniformDist/PDA_MAE.png" width="800px">
@@ -73,11 +73,11 @@ Many multipliers generated from uniform distributions with different l and $\lam
 
 ##### for half-normal distribution with $\mu = 0$ and $\sigma = 2^{30}$
 
-Multipliers are generated for the half-normal distribution applications.
+Multipliers for the half-normal distribution applications.
 
 #### signed 16-bit multipliers
 
-The multipliers are generated for an adaptive least mean square (LMS)-based finite impulse response (FIR) filter.
+Multipliers for an adaptive least mean square (LMS)-based finite impulse response (FIR) filter.
 
 ### reproduced unsigned 8-bit multipliers
 
