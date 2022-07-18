@@ -6,7 +6,7 @@ g = width(1);
 h = width(2);
 l = 6;
 sign = 0;
-areaR = 0.3;
+R = 0.3;
 
 if sign == 0
     mat_file = "unsigned_";
@@ -24,7 +24,7 @@ Ub = ones(1, Z);
 IntCon = 1:Z;
 
 terms = Z;
-M = floor( l*h - g*h*areaR );
+M = l*h - g*h*R;
 
 lamb = 1;
 while terms > max{M, 0}
