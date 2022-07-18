@@ -36,4 +36,4 @@ while terms > max{M, 0}
 end
 
 disp("lamb: ");
-disp(lamb / 10);
+disp(lamb / 20);
