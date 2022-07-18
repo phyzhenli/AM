@@ -32,7 +32,7 @@ while terms > max{M, 0}
     fun = @(x) objectFun(x) + x*ones(Z, 1)*lamb;
     [x, fval] = ga(fun, Z, [], [], [], [], Lb, Ub, [], IntCon);
     terms = sum(x);
-    lamb = lamb * 10;
+    lamb = lamb * 20;
 end
 
 disp("lamb: ");
