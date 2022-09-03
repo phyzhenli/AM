@@ -16,7 +16,7 @@ end
 mat_file = mat_file + string(g) + "x" + string(h) + "_l" +string(l);
 load(mat_file);
 
-objectFun = @(x) x * objectMat * x';
+objectFun = @(x) [1 x] * objectMat * [1 x]';
 
 Z = ( 3*h - 2) * l;
 Lb = zeros(1, Z);
