@@ -18,7 +18,7 @@ end
 mat_file = mat_file + string(g) + "x" + string(h) + "_l" +string(l);
 load(mat_file);
 
-objectFun = @(x) sum( sum( diag([1 x])*objectMat*diag([1 x]) ) );
+objectFun = @(x) x * objectMat * x';
 
 Z = ( 3*h - 2) * l;
 Lb = zeros(1, Z);
