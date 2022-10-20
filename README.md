@@ -14,7 +14,7 @@ The goal of the method is to generate approximate multipliers based on the data 
 
 The 'software' folder contains the MATLAB code of the method. Please follow the steps to generate multipliers:
 
-- Step-1: select the unsigned multiplier or the signed multiplier: sign = 0 or 1.
+- Step-1: select the unsigned multiplier or the signed multiplier: sign = 0 or 1 in 'LogicCompress.m'.
 
 - Step-2: decide the number of rows of the partial products $l$ to be compressed.
 <!-- - The value of $l$ can be roughly set to min{$g^{\prime}$, even($2gR$)}, where $R$ is the desired percent reduction of area and even() means rounding up to the nearest even number. -->
