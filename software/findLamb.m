@@ -27,7 +27,7 @@ terms = Z;
 M = l*h - g*h*R;
 
 lamb = 1;
-while terms > max{M, 0}
+while terms > max(M, 0)
     disp(lamb);
     fun = @(x) objectFun(x) + x*ones(Z, 1)*lamb;
     [x, fval] = ga(fun, Z, [], [], [], [], Lb, Ub, [], IntCon);
