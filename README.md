@@ -1,5 +1,19 @@
 # Adaptable Approximate Multiplier Design Driven by Input Distribution and Polarity
 
+## cite
+If you use this repository, please cite our [paper](https://ieeexplore.ieee.org/abstract/document/9861394):
+```
+@ARTICLE{9861394,
+  author={Li, Zhen and Zheng, Su and Zhang, Jide and Lu, Yao and Gao, Jingbo and Tao, Jun and Wang, Lingli},
+  journal={IEEE Transactions on Very Large Scale Integration (VLSI) Systems}, 
+  title={Adaptable Approximate Multiplier Design Based on Input Distribution and Polarity}, 
+  year={2022},
+  volume={30},
+  number={12},
+  pages={1813-1826},
+  doi={10.1109/TVLSI.2022.3197229}}
+```
+
 This repository contains:
 - software: the MATLAB code of the optimization method.
 - multipliers: Verilog models of reproduced multipliers and generated multipliers.
@@ -166,17 +180,3 @@ TASU is a DNN accelerator for DoReFa-Net. The top module is conv0 and the multip
 ## scripts
 
 The files 'constraints_comb.tcl' and 'constraints_seq.tcl' work for synthesis of multipliers and accelerators respectively.
-
-## cite
-If you use this repository, please cite our [paper](https://ieeexplore.ieee.org/abstract/document/9861394):
-```
-@ARTICLE{9861394,
-  author={Li, Zhen and Zheng, Su and Zhang, Jide and Lu, Yao and Gao, Jingbo and Tao, Jun and Wang, Lingli},
-  journal={IEEE Transactions on Very Large Scale Integration (VLSI) Systems}, 
-  title={Adaptable Approximate Multiplier Design Based on Input Distribution and Polarity}, 
-  year={2022},
-  volume={30},
-  number={12},
-  pages={1813-1826},
-  doi={10.1109/TVLSI.2022.3197229}}
-```
