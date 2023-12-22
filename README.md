@@ -1,7 +1,7 @@
 # Adaptable Approximate Multiplier Design Driven by Input Distribution and Polarity
 
 ## cite
-If you use this repository, please cite our [paper](https://ieeexplore.ieee.org/abstract/document/9861394):
+If you use this repository, we would appreciate a citation for the following [article](https://ieeexplore.ieee.org/abstract/document/9861394):
 ```
 @ARTICLE{9861394,
   author={Li, Zhen and Zheng, Su and Zhang, Jide and Lu, Yao and Gao, Jingbo and Tao, Jun and Wang, Lingli},
